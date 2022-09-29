@@ -69,18 +69,40 @@
 // Kopi sudah siap!
 // */
 
-function fetchUsername() {
-    return new Promise((resolve, reject) => {
-        setTimeout(() => {
-            resolve('JSUser');
-        }, 3000);
-    })
+// function fetchUsername() {
+//     return new Promise((resolve, reject) => {
+//         setTimeout(() => {
+//             resolve('JSUser');
+//         }, 3000);
+//     })
+// }
+
+// console.log("Fetching username...");
+// fetchUsername().then((value) => {
+//     console.log(`You are logged in as ${value}`);
+// })
+// .finally(() => {
+//     console.log("Welcome!");
+// })
+
+import _ from 'lodash';
+ 
+const myArray = [1, 2, 3, 4];
+let value = 0
+let sum =  myArray.reduce((prev, curr) => {
+    return prev + curr;
+});
+ 
+for(let i = 0; i < myArray.length; i++) {
+    value += myArray[i];
 }
 
-console.log("Fetching username...");
-fetchUsername().then((value) => {
-    console.log(`You are logged in as ${value}`);
-})
-.finally(() => {
-    console.log("Welcome!");
-})
+const sumLodash = _.sum(myArray);
+
+console.log(sumLodash);
+console.log(sum);
+console.log(value);
+ 
+/* output
+10
+*/
